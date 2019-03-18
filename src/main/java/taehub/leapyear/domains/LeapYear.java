@@ -1,4 +1,4 @@
-package taehub.fizzbuzz.domains;
+package taehub.leapyear.domains;
 
 public class LeapYear {
     public boolean isLeapYear(int year) {

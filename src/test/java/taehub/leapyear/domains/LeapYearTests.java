@@ -1,7 +1,8 @@
-package taehub.fizzbuzz.domains;
+package taehub.leapyear.domains;
 
 import org.junit.Assert;
 import org.junit.Test;
+import taehub.leapyear.domains.LeapYear;
 
 public class LeapYearTests {
     private final LeapYear leapYear = new LeapYear();

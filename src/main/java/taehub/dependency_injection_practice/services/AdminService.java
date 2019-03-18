@@ -1,4 +1,4 @@
-package taehub.fizzbuzz.services;
+package taehub.dependency_injection_practice.services;
 
 public class AdminService implements UserServiceInterface {
     @Override

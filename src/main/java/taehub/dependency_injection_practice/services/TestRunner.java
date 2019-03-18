@@ -1,4 +1,4 @@
-package taehub.fizzbuzz.services;
+package taehub.dependency_injection_practice.services;
 
 public class TestRunner {
     public static void main(String[] args) {
