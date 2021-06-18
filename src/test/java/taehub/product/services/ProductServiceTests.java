@@ -20,7 +20,7 @@ public class ProductServiceTests {
 
         double totalPrice = productService.calculateTotalPrice();
 
-        Assert.assertEquals(totalPrice, 0.00);
+        Assert.assertEquals(totalPrice, 0.00, 0.00);
     }
 
     @Test
@@ -30,7 +30,7 @@ public class ProductServiceTests {
 
         double totalPrice = productService.calculateTotalPrice();
 
-        Assert.assertEquals(totalPrice, 10.00);
+        Assert.assertEquals(totalPrice, 10.00, 0.00);
     }
 
     @Test
@@ -42,7 +42,7 @@ public class ProductServiceTests {
 
         double totalPrice = productService.calculateTotalPrice();
 
-        Assert.assertEquals(totalPrice, 50.00);
+        Assert.assertEquals(totalPrice, 50.00, 0.00);
     }
 
     @Test
@@ -55,7 +55,7 @@ public class ProductServiceTests {
 
         double totalPrice = productService.calculateTotalPrice(discount);
 
-        Assert.assertEquals(totalPrice, 45.00);
+        Assert.assertEquals(totalPrice, 45.00, 0.00);
     }
 
     @Test
@@ -69,6 +69,6 @@ public class ProductServiceTests {
 
         double totalPrice = productService.calculateTotalPrice(discount);
 
-        Assert.assertEquals(totalPrice, 72.00);
+        Assert.assertEquals(totalPrice, 72.00, 0.00);
     }
 }
