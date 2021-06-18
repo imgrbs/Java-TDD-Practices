@@ -20,7 +20,7 @@ public class ProductServiceTests {
 
         double totalPrice = productService.calculateTotalPrice();
 
-        Assert.assertEquals(totalPrice, 0.00, 0.00);
+        Assert.assertEquals(totalPrice, 0.00);
     }
 
     @Test
@@ -30,7 +30,7 @@ public class ProductServiceTests {
 
         double totalPrice = productService.calculateTotalPrice();
 
-        Assert.assertEquals(totalPrice, 10.00, 0.00);
+        Assert.assertEquals(totalPrice, 10.00);
     }
 
     @Test
@@ -42,11 +42,11 @@ public class ProductServiceTests {
 
         double totalPrice = productService.calculateTotalPrice();
 
-        Assert.assertEquals(totalPrice, 50.00, 0.00);
+        Assert.assertEquals(totalPrice, 50.00);
     }
 
     @Test
-    public void testCalculateTotalPriceWith2ItemAndDiscount10PercentShouldReturn50() {
+    public void testCalculateTotalPriceWith2ItemAndDiscount10PercentShouldReturn45() {
         Cart cart = new Cart();
         cart.addProduct(new Product("Chocolate", 10.00));
         cart.addProduct(new Product("Pocky", 40.00));
@@ -55,11 +55,11 @@ public class ProductServiceTests {
 
         double totalPrice = productService.calculateTotalPrice(discount);
 
-        Assert.assertEquals(totalPrice, 45.00, 0.00);
+        Assert.assertEquals(totalPrice, 45.00);
     }
 
     @Test
-    public void testCalculateTotalPriceWith3ItemAndDiscount20PercentShouldReturn50() {
+    public void testCalculateTotalPriceWith3ItemAndDiscount20PercentShouldReturn72() {
         Cart cart = new Cart();
         cart.addProduct(new Product("Chocolate", 10.00));
         cart.addProduct(new Product("Pocky", 40.00));
@@ -69,6 +69,6 @@ public class ProductServiceTests {
 
         double totalPrice = productService.calculateTotalPrice(discount);
 
-        Assert.assertEquals(totalPrice, 72.00, 0.00);
+        Assert.assertEquals(totalPrice, 72.00);
     }
 }
