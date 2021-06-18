@@ -6,8 +6,7 @@ import taehub.product.models.Discount;
 
 @Service
 public class ProductService {
-
-    Cart cart;
+    private Cart cart;
 
     public ProductService() {
     }
@@ -17,20 +16,21 @@ public class ProductService {
     }
 
     public double calculateTotalPrice(Discount discount) {
-        if (cart != null) {
-            double totalPrice = cart.getTotalPrice();
-            double discountValue = totalPrice * discount.getDiscountValue();
-            totalPrice -= discountValue;
-            return totalPrice;
+        if (cart == null) {
+            return 0.00;
         }
-        return 0.00;
+        if (discount == null){
+            return calculateTotalPrice();
+        }
+        double totalPrice = cart.getTotalPrice();
+        double discountValue = totalPrice * discount.getDiscountValue();
+        return totalPrice - discountValue;
     }
 
-
     public double calculateTotalPrice() {
-        if (cart != null) {
-            return cart.getTotalPrice();
+        if (cart == null) {
+            return 0.00;
         }
-        return 0.00;
+        return cart.getTotalPrice();
     }
 }

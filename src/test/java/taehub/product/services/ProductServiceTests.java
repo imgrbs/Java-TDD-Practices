@@ -71,4 +71,26 @@ public class ProductServiceTests {
 
         Assert.assertEquals(totalPrice, 72.00, 0.00);
     }
+
+    @Test
+    public void testCalculateTotalPriceWithNullCartAndDiscount10Percent() {
+        ProductService productService = new ProductService(null);
+        Discount discount = new Discount("10% couple", 0.1);
+
+        double totalPrice = productService.calculateTotalPrice(discount);
+
+        Assert.assertEquals(totalPrice, 0.00, 0.00);
+    }
+
+    @Test
+    public void testCalculateTotalPriceWith2ItemsCartAndNullDiscount() {
+        Cart cart = new Cart();
+        cart.addProduct(new Product("Chocolate", 10.00));
+        cart.addProduct(new Product("Pocky", 40.00));
+        ProductService productService = new ProductService(cart);
+
+        double totalPrice = productService.calculateTotalPrice(null);
+
+        Assert.assertEquals(totalPrice, 50.00, 0.00);
+    }
 }
