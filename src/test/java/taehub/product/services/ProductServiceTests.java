@@ -46,7 +46,7 @@ public class ProductServiceTests {
     }
 
     @Test
-    public void testCalculateTotalPriceWith2ItemAndDiscount10PercentShouldReturn50() {
+    public void testCalculateTotalPriceWith2ItemAndDiscount10PercentShouldReturn45() {
         Cart cart = new Cart();
         cart.addProduct(new Product("Chocolate", 10.00));
         cart.addProduct(new Product("Pocky", 40.00));
@@ -59,7 +59,7 @@ public class ProductServiceTests {
     }
 
     @Test
-    public void testCalculateTotalPriceWith3ItemAndDiscount20PercentShouldReturn50() {
+    public void testCalculateTotalPriceWith3ItemAndDiscount20PercentShouldReturn72() {
         Cart cart = new Cart();
         cart.addProduct(new Product("Chocolate", 10.00));
         cart.addProduct(new Product("Pocky", 40.00));
